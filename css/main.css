@@ -30,7 +30,7 @@ body {
 
 body {
   background: url(../img/test.jpeg) no-repeat;
-  background-size: 1300px 660px;
+  background-size: cover;
   color: #fff;
   text-align: center;
   font-family: 'Quicksand', sans-serif; }
@@ -164,7 +164,7 @@ body {
 @media screen and (max-width: 960px) {
   body {
     background: url(../img/test.jpeg) no-repeat;
-    background-size: 1300px 1024px;
+    background-size: cover;
     color: #fff;
     text-align: center;
     font-family: 'Quicksand', sans-serif; 
