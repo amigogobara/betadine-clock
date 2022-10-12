@@ -146,8 +146,8 @@ body {
 }
 
 .show img {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     border-radius: 25%;
 }
 .show{
@@ -161,7 +161,7 @@ body {
 }
 .time-2{
     top: 25%;
-    left: 75%;    
+    left: 75%;
 }
 .time-3{
     top: 60%;
