@@ -188,3 +188,19 @@ body {
     left: 30%;
 }
 
+.btn{
+    position: absolute;
+    transform: translatex(-50%);
+    top: 90%;
+    left: 50%;
+    background-color: #4CAF50; /* Green */
+  border: none;
+  /* color: white; */
+  padding: 15px 32px;
+  border-radius: 50%;
+  /* text-align: center; */
+  /* text-decoration: none; */
+  /* display: inline-block; */
+  font-size: 16px;
+}
+
