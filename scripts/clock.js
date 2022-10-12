@@ -10,45 +10,34 @@ const show5 = document.querySelector(".time-5");
 const show6 = document.querySelector(".time-6");
 const show7 = document.querySelector(".time-7");
 const show8 = document.querySelector(".time-8");
+const vedio = document.querySelector("video");
+
+let seconds = 0;
 
 function setDate() {
-    const now = new Date();
-    const seconds = now.getSeconds();
-    // const seconds = 55;
+  if (seconds < 60) {
+    seconds++;
     const secondsDegrees = (seconds / 60) * 360 + 90;
-
-    // console.log("now = ",now);
-    // console.log("seconds = ",seconds);
-    // console.log("secondsDegrees = ",secondsDegrees);
-
-    // const mins = now.getMinutes();
-    // const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6) + 90;
-    // minsHand.style.transform = `rotate(${minsDegrees}deg)`;
-
-    // const hour = now.getHours();
-    // const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
     hourHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
-    console.log("seconds:", seconds);
-
     if (seconds >= 2 && seconds <= 6) {
-        show1.style.display = "block";
+      show1.style.display = "block";
     } else if (seconds >= 8 && seconds <= 13) {
-        show2.style.display = "block";
+      show2.style.display = "block";
     } else if (seconds >= 17 && seconds <= 21) {
-        show3.style.display = "block";
+      show3.style.display = "block";
     } else if (seconds >= 23 && seconds <= 28) {
-        show4.style.display = "block";
+      show4.style.display = "block";
     } else if (seconds >= 32 && seconds <= 37) {
-        show5.style.display = "block";
+      show5.style.display = "block";
     } else if (seconds >= 39 && seconds <= 44) {
-        show6.style.display = "block";
+      show6.style.display = "block";
     } else if (seconds >= 47 && seconds <= 51) {
-        show7.style.display = "block";
+      show7.style.display = "block";
     } else if (seconds >= 54 && seconds <= 58) {
         show8.style.display = "block";
     }else if (seconds >= 60) {
-        show8.style.display = "block";
+        vedio.style.display = "block";
     }else{
         show1.style.display = "none";
         show2.style.display = "none";
@@ -58,9 +47,11 @@ function setDate() {
         show6.style.display = "none";
         show7.style.display = "none";
         show8.style.display = "none";
+        vedio.style.display = "none";
     }
+  }
+}
+function start () {
+    setInterval(setDate, 1000);
 }
 
-setInterval(setDate, 1000);
-
-setDate();
