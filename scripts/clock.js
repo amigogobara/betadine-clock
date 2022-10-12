@@ -47,6 +47,8 @@ function setDate() {
         show7.style.display = "block";
     } else if (seconds >= 54 && seconds <= 58) {
         show8.style.display = "block";
+    }else if (seconds >= 60) {
+        show8.style.display = "block";
     }else{
         show1.style.display = "none";
         show2.style.display = "none";

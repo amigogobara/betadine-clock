@@ -150,7 +150,7 @@ body {
     width: 100px;
     border-radius: 25%;
 }
-.show{
+.show {
     position: absolute;
     transform: translatex(-50%);
     display: none;
@@ -188,3 +188,9 @@ body {
     left: 30%;
 }
 
+video{
+    top: 15%;
+    left: 50%;
+    z-index: 4;
+
+}
