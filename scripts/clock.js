@@ -14,7 +14,7 @@ const show8 = document.querySelector(".time-8");
 function setDate() {
     const now = new Date();
     const seconds = now.getSeconds();
-    // const seconds = 59;
+    // const seconds = 55;
     const secondsDegrees = (seconds / 60) * 360 + 90;
 
     // console.log("now = ",now);
@@ -31,22 +31,21 @@ function setDate() {
 
     console.log("seconds:", seconds);
 
-
     if (seconds >= 2 && seconds <= 6) {
         show1.style.display = "block";
     } else if (seconds >= 8 && seconds <= 13) {
         show2.style.display = "block";
     } else if (seconds >= 17 && seconds <= 21) {
         show3.style.display = "block";
-    } else if (seconds >= 23 && seconds < 29) {
+    } else if (seconds >= 23 && seconds <= 28) {
         show4.style.display = "block";
     } else if (seconds >= 32 && seconds <= 37) {
         show5.style.display = "block";
     } else if (seconds >= 39 && seconds <= 44) {
         show6.style.display = "block";
-    } else if (seconds >= 47 && seconds < 52) {
+    } else if (seconds >= 47 && seconds <= 51) {
         show7.style.display = "block";
-    } else if (seconds >= 54 && seconds < 59) {
+    } else if (seconds >= 54 && seconds <= 58) {
         show8.style.display = "block";
     }else{
         show1.style.display = "none";
@@ -58,18 +57,6 @@ function setDate() {
         show7.style.display = "none";
         show8.style.display = "none";
     }
-
-    // switch (true) {
-    //   case seconds<30:
-    //     show1.style.display = "block";
-    //     break;
-    //   case seconds<35:
-    //     show2.style.display = "block";
-    //     break;
-    //   default:
-    //     show.style.display = "none";
-    //     break;
-    // }
 }
 
 setInterval(setDate, 1000);
