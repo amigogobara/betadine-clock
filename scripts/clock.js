@@ -12,7 +12,7 @@ const show7 = document.querySelector(".time-7");
 const show8 = document.querySelector(".time-8");
 const vedio = document.querySelector("video");
 
-let seconds = 0;
+let seconds = 55;
 
 function setDate() {
   if (seconds < 60) {
@@ -35,23 +35,29 @@ function setDate() {
     } else if (seconds >= 47 && seconds <= 51) {
       show7.style.display = "block";
     } else if (seconds >= 54 && seconds <= 58) {
-        show8.style.display = "block";
-    }else if (seconds >= 60) {
-        vedio.style.display = "block";
-    }else{
-        show1.style.display = "none";
-        show2.style.display = "none";
-        show3.style.display = "none";
-        show4.style.display = "none";
-        show5.style.display = "none";
-        show6.style.display = "none";
-        show7.style.display = "none";
-        show8.style.display = "none";
+      show8.style.display = "block";
+    } else if (seconds >= 60) {
+      vedio.style.display = "block";
+      vedio.autoplay = true;
+      vedio.load();
+      vedio.onended = function () {
         vedio.style.display = "none";
+        
+      };
+    } else {
+      show1.style.display = "none";
+      show2.style.display = "none";
+      show3.style.display = "none";
+      show4.style.display = "none";
+      show5.style.display = "none";
+      show6.style.display = "none";
+      show7.style.display = "none";
+      show8.style.display = "none";
+      vedio.style.display = "none";
     }
   }
+  console.log(seconds);
 }
-function start () {
-    setInterval(setDate, 1000);
+function start() {
+  setInterval(setDate, 1000);
 }
-
