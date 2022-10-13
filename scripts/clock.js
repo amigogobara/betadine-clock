@@ -12,7 +12,7 @@ const show7 = document.querySelector(".time-7");
 const show8 = document.querySelector(".time-8");
 const vedio = document.querySelector("video");
 
-let seconds = 55;
+let seconds = 0;
 
 function setDate() {
   if (seconds < 60) {
@@ -39,10 +39,11 @@ function setDate() {
     } else if (seconds >= 60) {
       vedio.style.display = "block";
       vedio.autoplay = true;
+      vedio.webkitEnterFullscreen();
       vedio.load();
       vedio.onended = function () {
         vedio.style.display = "none";
-        
+
       };
     } else {
       show1.style.display = "none";
