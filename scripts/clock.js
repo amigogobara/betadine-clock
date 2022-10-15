@@ -11,8 +11,10 @@ const show6 = document.querySelector(".time-6");
 const show7 = document.querySelector(".time-7");
 const show8 = document.querySelector(".time-8");
 const vedio = document.querySelector("video");
+const audio = document.querySelector("audio");
 
-let seconds = 0;
+
+let seconds = 50;
 
 function setDate() {
   if (seconds < 60) {
@@ -21,28 +23,34 @@ function setDate() {
     hourHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
     if (seconds >= 2 && seconds <= 6) {
-      show1.style.display = "block";
+      show1.style.display = "flex";
     } else if (seconds >= 8 && seconds <= 13) {
-      show2.style.display = "block";
+      show2.style.display = "flex";
     } else if (seconds >= 17 && seconds <= 21) {
-      show3.style.display = "block";
+      show3.style.display = "flex";
     } else if (seconds >= 23 && seconds <= 28) {
-      show4.style.display = "block";
-    } else if (seconds >= 32 && seconds <= 37) {
-      show5.style.display = "block";
+      show4.style.display = "flex";
+    } else if (seconds >= 31 && seconds <= 37) {
+      show5.style.display = "flex";
     } else if (seconds >= 39 && seconds <= 44) {
-      show6.style.display = "block";
+      show6.style.display = "flex";
     } else if (seconds >= 47 && seconds <= 51) {
-      show7.style.display = "block";
+      show7.style.display = "flex";
     } else if (seconds >= 54 && seconds <= 58) {
-      show8.style.display = "block";
+      show8.style.display = "flex";
     } else if (seconds >= 60) {
+      audio.muted =true;
       vedio.style.display = "block";
       vedio.autoplay = true;
-      vedio.webkitEnterFullscreen();
+      // audio.autoplay = false;
+
+      // vedio.webkitEnterFullscreen();
+      
       vedio.load();
+      
       vedio.onended = function () {
         vedio.style.display = "none";
+        // audio.autoplay = true;
 
       };
     } else {
@@ -60,5 +68,5 @@ function setDate() {
   console.log(seconds);
 }
 function start() {
-  setInterval(setDate, 1000);
+  setInterval(setDate, 100);
 }
