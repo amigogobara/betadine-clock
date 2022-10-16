@@ -13,15 +13,14 @@ const show8 = document.querySelector(".time-8");
 const vedio = document.querySelector("video");
 const audio = document.getElementById("audio1");
 var x;
+var audioIntervalRun;
 let seconds = 0;
 
 function setDate() {
   if (seconds < 60) {
     seconds++;
-    console.log(seconds);
     const secondsDegrees = (seconds / 60) * 360 + 90;
     hourHand.style.transform = `rotate(${secondsDegrees}deg)`;
-
     if (seconds >= 2 && seconds <= 6) {
       show1.style.display = "flex";
     } else if (seconds >= 8 && seconds <= 13) {
@@ -40,25 +39,17 @@ function setDate() {
       show8.style.display = "flex";
     } else if (seconds >= 60) {
       clearInterval(x);
+      clearInterval(audioIntervalRun);
       seconds = 0;
-      audio.pause();
       vedio.style.display = "block";
       vedio.autoplay = true;
-      // audio.autoplay = false;
-      // vedio.webkitEnterFullscreen();
+      audio.pause();
       vedio.load();
       vedio.onended = function () {
         vedio.style.display = "none";
-        //     document.getElementById("demo").innerHTML = `<audio controls autoplay>
-        //   <source src="img/mm.mp3" type="audio/ogg">
-        //   <source src="img/mm.mp3" type="audio/mpeg">
-        // </audio>`;
+        audioIntervalRun = setInterval(playAudio, 5000);
+        audio.currentTime = 0;
         audio.play();
-        if (!audio.paused) {
-          audio.currentTime = 0;
-          audio.play();
-        }
-        // audio.autoplay = true;
       };
     } else {
       show1.style.display = "none";
@@ -75,5 +66,10 @@ function setDate() {
   console.log(seconds);
 }
 function start() {
-  x = setInterval(setDate, 100);
+  x = setInterval(setDate, 1500);
 }
+function playAudio() {
+  audio.currentTime = 0;
+  audio.play();
+}
+audioIntervalRun = setInterval(playAudio, 300000);

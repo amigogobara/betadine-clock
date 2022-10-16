@@ -158,7 +158,6 @@ body {
 .time-1 {
   top: 6%;
   left: 70%;
-  
 }
 .time-2 {
   top: 25%;
@@ -217,18 +216,18 @@ video {
   position: absolute;
   transform: translatex(-50%);
 }
-.show p{
+.show p {
   margin-block-start: auto;
-    margin-block-end: auto;
+  margin-block-end: auto;
 }
-p{
+p {
   font-weight: bold;
   font-size: x-large;
 }
-span{
+span {
   font-weight: bold;
   font-size: x-large;
 }
-audio{
+audio {
   display: contents;
 }
