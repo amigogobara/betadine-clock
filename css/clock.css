@@ -230,5 +230,5 @@ span{
   font-size: x-large;
 }
 audio{
-  display: none;
+  display: contents;
 }
