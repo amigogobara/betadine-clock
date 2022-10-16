@@ -11,7 +11,7 @@ const show6 = document.querySelector(".time-6");
 const show7 = document.querySelector(".time-7");
 const show8 = document.querySelector(".time-8");
 const vedio = document.querySelector("video");
-const audio = document.querySelector("audio");
+const audio = document.getElementById("audio1");
 var x;
 let seconds = 0;
 
@@ -41,7 +41,7 @@ function setDate() {
     } else if (seconds >= 60) {
       clearInterval(x);
       seconds = 0;
-      audio.muted = true;
+      audio.pause();
       vedio.style.display = "block";
       vedio.autoplay = true;
       // audio.autoplay = false;
@@ -49,10 +49,15 @@ function setDate() {
       vedio.load();
       vedio.onended = function () {
         vedio.style.display = "none";
-        document.getElementById("demo").innerHTML = `<audio controls autoplay>
-      <source src="img/mm.mp3" type="audio/ogg">
-      <source src="img/mm.mp3" type="audio/mpeg">
-    </audio>`;
+        //     document.getElementById("demo").innerHTML = `<audio controls autoplay>
+        //   <source src="img/mm.mp3" type="audio/ogg">
+        //   <source src="img/mm.mp3" type="audio/mpeg">
+        // </audio>`;
+        audio.play();
+        if (!audio.paused) {
+          audio.currentTime = 0;
+          audio.play();
+        }
         // audio.autoplay = true;
       };
     } else {
@@ -70,6 +75,5 @@ function setDate() {
   console.log(seconds);
 }
 function start() {
-  x=setInterval(setDate, 100);
-  
+  x = setInterval(setDate, 100);
 }
