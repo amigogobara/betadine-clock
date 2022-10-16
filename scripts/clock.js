@@ -39,8 +39,8 @@ function setDate() {
     } else if (seconds >= 54 && seconds <= 58) {
       show8.style.display = "flex";
     } else if (seconds >= 60) {
-          clearInterval(x);
-
+      clearInterval(x);
+      seconds = 0;
       audio.muted = true;
       vedio.style.display = "block";
       vedio.autoplay = true;
