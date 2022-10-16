@@ -15,7 +15,6 @@ const audio = document.getElementById("audio1");
 var x;
 var audioIntervalRun;
 let seconds = 0;
-
 function setDate() {
   if (seconds < 60) {
     seconds++;
