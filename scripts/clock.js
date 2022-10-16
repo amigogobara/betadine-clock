@@ -47,7 +47,7 @@ function setDate() {
       vedio.load();
       vedio.onended = function () {
         vedio.style.display = "none";
-        audioIntervalRun = setInterval(playAudio, 5000);
+        audioIntervalRun = setInterval(playAudio, 300000);
         audio.currentTime = 0;
         audio.play();
       };
@@ -63,7 +63,6 @@ function setDate() {
       vedio.style.display = "none";
     }
   }
-  console.log(seconds);
 }
 function start() {
   x = setInterval(setDate, 1500);
