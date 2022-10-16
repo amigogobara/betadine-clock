@@ -12,13 +12,13 @@ const show7 = document.querySelector(".time-7");
 const show8 = document.querySelector(".time-8");
 const vedio = document.querySelector("video");
 const audio = document.querySelector("audio");
-
-
-let seconds = 50;
+var x;
+let seconds = 0;
 
 function setDate() {
   if (seconds < 60) {
     seconds++;
+    console.log(seconds);
     const secondsDegrees = (seconds / 60) * 360 + 90;
     hourHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
@@ -39,19 +39,21 @@ function setDate() {
     } else if (seconds >= 54 && seconds <= 58) {
       show8.style.display = "flex";
     } else if (seconds >= 60) {
-      audio.muted =true;
+          clearInterval(x);
+
+      audio.muted = true;
       vedio.style.display = "block";
       vedio.autoplay = true;
       // audio.autoplay = false;
-
       // vedio.webkitEnterFullscreen();
-      
       vedio.load();
-      
       vedio.onended = function () {
         vedio.style.display = "none";
+        document.getElementById("demo").innerHTML = `<audio controls autoplay>
+      <source src="img/mm.mp3" type="audio/ogg">
+      <source src="img/mm.mp3" type="audio/mpeg">
+    </audio>`;
         // audio.autoplay = true;
-
       };
     } else {
       show1.style.display = "none";
@@ -68,5 +70,6 @@ function setDate() {
   console.log(seconds);
 }
 function start() {
-  setInterval(setDate, 100);
+  x=setInterval(setDate, 100);
+  
 }
